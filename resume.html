@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J M D Tharun | Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #0284c7;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f1f5f9;
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .btn-print {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-print:hover {
+            background: #0369a1;
+        }
+
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .resume-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        .section {
+            margin-bottom: 1.8rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+
+        .item {
+            margin-bottom: 1rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .item-sub {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .item-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .item-list {
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .item-list li {
+            margin-bottom: 0.3rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .skill-group strong {
+            color: var(--primary);
+        }
+
+        .cert-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+
+        .cert-item {
+            background: #f8fafc;
+            padding: 0.6rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .cert-title {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .cert-issuer {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .header-actions {
+                display: none;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <div class="header-actions">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Website</a>
+            <button onclick="window.print()" class="btn-print"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+        </div>
+
+        <header class="resume-header">
+            <h1 class="name">J M D Tharun</h1>
+            <div class="title">AI & Data Science Undergraduate | Data Analytics Enthusiast</div>
+            <div class="contact-info">
+                <span><i class="fa-solid fa-location-dot"></i> Krishnagiri, Tamil Nadu, India</span>
+                <span><i class="fa-solid fa-envelope"></i> <a href="mailto:tharunmurugesan2000@gmail.com">tharunmurugesan2000@gmail.com</a></span>
+                <span><i class="fa-solid fa-phone"></i> +91 90424 33487</span>
+                <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/j-m-d-tharun-b2622236b" target="_blank">linkedin.com/in/j-m-d-tharun-b2622236b</a></span>
+                <span><i class="fa-brands fa-github"></i> <a href="https://github.com/jmdtharun" target="_blank">github.com/jmdtharun</a></span>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-user"></i> Professional Summary</h2>
+            <p class="summary">
+                AI & Data Science undergraduate with a keen interest in data analytics. Proficient in tools such as Power BI, SQL, and Python to analyze datasets and create visual dashboards. Motivated learner actively building practical skills through online certifications, symposia, and virtual internships. Dedicated to analyzing trends and delivering clear, actionable data insights. Seeking internship or entry-level opportunities in data analytics to contribute and grow professionally.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>Bachelor of Technology (B.Tech) — Artificial Intelligence & Data Science</span>
+                    <span class="item-date">Aug 2024 – Aug 2028</span>
+                </div>
+                <div class="item-sub">VSB Engineering College, Tamil Nadu, India</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span>Data Science Intern</span>
+                    <span class="item-date">Jun 2026 – Jul 2026</span>
+                </div>
+                <div class="item-sub">Sysent Technologies | Tiruchirappalli, Tamil Nadu</div>
+                <ul class="item-list">
+                    <li>Completed a one-month internship in the Data Science domain, contributing to assigned tasks and projects.</li>
+                    <li>Maintained a professional and consistent work standard, recognized by the HR department upon completion.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Data Analytics Intern (Credit Card Fraud Detection)</span>
+                    <span class="item-date">Dec 2025 – Jan 2026</span>
+                </div>
+                <div class="item-sub">C2E Software Solutions Private Limited | Chennai, Tamil Nadu</div>
+                <ul class="item-list">
+                    <li>Completed a hands-on internship analyzing transaction data to identify patterns indicative of credit card fraud.</li>
+                    <li>Applied data analytics techniques to detect anomalies and support fraud-detection workflows.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Projects</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>Spam Email Detection System</span>
+                    <span class="item-date">Live Project</span>
+                </div>
+                <div class="item-sub">Live Demo: <a href="https://spam-email-detection-system-1.onrender.com" target="_blank">spam-email-detection-system-1.onrender.com</a></div>
+                <ul class="item-list">
+                    <li>Built and deployed a machine learning-based system to classify emails as spam or legitimate using Python and Scikit-Learn.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-code"></i> Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-group"><strong>Languages:</strong> Python, SQL</div>
+                <div class="skill-group"><strong>Data Analysis:</strong> Data Cleaning, Visualization, EDA</div>
+                <div class="skill-group"><strong>Tools & IDEs:</strong> Microsoft Power BI, IntelliJ IDEA</div>
+                <div class="skill-group"><strong>Concepts:</strong> AI, Machine Learning, IoT, Agile Scrum</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-certificate"></i> Certifications</h2>
+            <div class="cert-list">
+                <div class="cert-item">
+                    <div class="cert-title">AI Fundamentals</div>
+                    <div class="cert-issuer">IBM SkillsBuild & Cisco (Nov 2025)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">IoT & Digital Transformation</div>
+                    <div class="cert-issuer">EdCreate & Cisco (Nov 2025)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Python Foundation</div>
+                    <div class="cert-issuer">Infosys Springboard (Jul 2025)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Introduction to Data Analytics</div>
+                    <div class="cert-issuer">SimpliLearn SkillUp (Nov 2025)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">AI-ML Engineer Certificate</div>
+                    <div class="cert-issuer">Reliance Foundation (Jun 2026)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">SQL & Relational Databases 101</div>
+                    <div class="cert-issuer">IBM / Cognitive Class (Jan 2026)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">TCS iON Career Edge – Young Prof.</div>
+                    <div class="cert-issuer">Tata Consultancy Services (Jul 2026)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Agile Scrum Fundamentals</div>
+                    <div class="cert-issuer">Udemy (Dec 2025)</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Achievements & Activities</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>Paper Presentation — "Sustainable Development"</span>
+                    <span class="item-date">Sep 2025</span>
+                </div>
+                <div class="item-sub">ELECTRA'25 National Technical Symposium | Anna University Madurai Campus</div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
