@@ -34,20 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------------------------
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const navOverlay = document.getElementById('nav-overlay');
     const navLinks = document.querySelectorAll('.nav-link');
+
+    const closeMobileMenu = () => {
+        if (navMenu) navMenu.classList.remove('active');
+        if (mobileToggle) mobileToggle.classList.remove('open');
+        if (navOverlay) navOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    };
 
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileToggle.classList.toggle('open');
+            const isOpen = navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('open', isOpen);
+            if (navOverlay) navOverlay.classList.toggle('active', isOpen);
+            document.body.classList.toggle('menu-open', isOpen);
         });
+
+        if (navOverlay) {
+            navOverlay.addEventListener('click', closeMobileMenu);
+        }
 
         // Close menu when a link is clicked
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileToggle.classList.remove('open');
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
     }
 
