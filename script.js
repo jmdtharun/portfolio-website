@@ -1,15 +1,30 @@
 /* ==========================================================================
    J M D THARUN - PORTFOLIO INTERACTIVITY SCRIPT
+   Enhanced with Modern Trends: Animated KPI Counters, Scroll Depth Tracker,
+   Interactive Project Filter, One-Click Email Copy, and Toast System.
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------------------------
-    // 1. THEME TOGGLE (DARK / LIGHT MODE)
+    // 1. READING SCROLL PROGRESS BAR
+    // ----------------------------------------------------------------------
+    const scrollProgressBar = document.getElementById('scroll-progress');
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (scrollProgressBar) {
+            scrollProgressBar.style.width = `${scrollPercent}%`;
+        }
+    }, { passive: true });
+
+    // ----------------------------------------------------------------------
+    // 2. THEME TOGGLE (DARK / LIGHT MODE)
     // ----------------------------------------------------------------------
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
 
-    // Check localStorage or system preference
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -30,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------------------------------------
-    // 2. MOBILE NAVIGATION MENU
+    // 3. MOBILE NAVIGATION MENU
     // ----------------------------------------------------------------------
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
@@ -56,30 +71,27 @@ document.addEventListener('DOMContentLoaded', () => {
             navOverlay.addEventListener('click', closeMobileMenu);
         }
 
-        // Close menu when a link is clicked
         navLinks.forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
     }
 
     // ----------------------------------------------------------------------
-    // 3. STICKY NAVBAR & ACTIVE NAV LINK ON SCROLL
+    // 4. STICKY NAVBAR & ACTIVE NAV LINK HIGHLIGHT
     // ----------------------------------------------------------------------
     const navbar = document.getElementById('navbar');
     const sections = document.querySelectorAll('section[id]');
 
     window.addEventListener('scroll', () => {
-        // Add shadow on scroll
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
 
-        // Active link detection based on scroll position
         let currentSectionId = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop - 120;
             const sectionHeight = section.offsetHeight;
             if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                 currentSectionId = section.getAttribute('id');
@@ -92,10 +104,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add('active');
             }
         });
-    });
+    }, { passive: true });
 
     // ----------------------------------------------------------------------
-    // 4. SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
+    // 5. ANIMATED KPI NUMBER COUNTERS
+    // ----------------------------------------------------------------------
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let counted = false;
+
+    const animateCounters = () => {
+        statNumbers.forEach(numEl => {
+            const target = parseInt(numEl.getAttribute('data-target'), 10);
+            const duration = 1600; // 1.6s
+            const frameRate = 1000 / 60;
+            const totalFrames = Math.round(duration / frameRate);
+            let frame = 0;
+
+            const counter = setInterval(() => {
+                frame++;
+                const progress = frame / totalFrames;
+                // Ease out quad
+                const currentCount = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+                numEl.textContent = currentCount;
+
+                if (frame >= totalFrames) {
+                    numEl.textContent = target;
+                    clearInterval(counter);
+                }
+            }, frameRate);
+        });
+    };
+
+    const statsSection = document.querySelector('.stats-strip');
+    if (statsSection) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counted) {
+                    counted = true;
+                    animateCounters();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        statsObserver.observe(statsSection);
+    }
+
+    // ----------------------------------------------------------------------
+    // 6. SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
     // ----------------------------------------------------------------------
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
@@ -103,19 +158,19 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal-active');
-                observer.unobserve(entry.target); // Trigger once
+                observer.unobserve(entry.target);
             }
         });
     }, {
         root: null,
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
     // ----------------------------------------------------------------------
-    // 5. ANIMATED SKILL BARS
+    // 7. ANIMATED SKILL PROGRESS BARS
     // ----------------------------------------------------------------------
     const skillBars = document.querySelectorAll('.progress-line span');
 
@@ -127,12 +182,83 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.25 });
 
     skillBars.forEach(bar => skillObserver.observe(bar));
 
     // ----------------------------------------------------------------------
-    // 6. CONTACT FORM SUBMISSION (FRONTEND DEMO WITH FEEDBACK TOAST)
+    // 8. INTERACTIVE PROJECT CATEGORY FILTERS
+    // ----------------------------------------------------------------------
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const categories = card.getAttribute('data-category') || '';
+                if (filterValue === 'all' || categories.includes(filterValue)) {
+                    card.removeAttribute('data-hidden');
+                    card.style.display = 'flex';
+                } else {
+                    card.setAttribute('data-hidden', 'true');
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // ----------------------------------------------------------------------
+    // 9. ONE-CLICK COPY EMAIL WITH TOAST NOTIFICATION
+    // ----------------------------------------------------------------------
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+    let toastTimeout;
+
+    const showToast = (message) => {
+        if (!toast) return;
+        if (toastMessage) toastMessage.textContent = message;
+        toast.classList.add('show');
+
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3500);
+    };
+
+    const copyButtons = document.querySelectorAll('.copy-email-btn');
+    copyButtons.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const email = btn.getAttribute('data-email') || 'tharunmurugesan2000@gmail.com';
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(email);
+                } else {
+                    // Fallback
+                    const textArea = document.createElement('textarea');
+                    textArea.value = email;
+                    textArea.style.position = 'fixed';
+                    textArea.style.left = '-999999px';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    textArea.remove();
+                }
+                showToast(`Copied ${email} to clipboard!`);
+            } catch (err) {
+                showToast(`Email: ${email}`);
+            }
+        });
+    });
+
+    // ----------------------------------------------------------------------
+    // 10. CONTACT FORM SUBMISSION
     // ----------------------------------------------------------------------
     const contactForm = document.getElementById('contact-form');
     const formSubmitBtn = document.getElementById('form-submit-btn');
@@ -143,27 +269,23 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const name = document.getElementById('form-name').value;
-            const email = document.getElementById('form-email').value;
-
-            // Change button state
             formSubmitBtn.disabled = true;
             formSubmitBtn.innerHTML = `<span>Sending...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
 
             setTimeout(() => {
                 formStatus.className = 'form-status success';
-                formStatus.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you, <strong>${name}</strong>! Your message has been sent successfully. I will get back to you soon.`;
+                formStatus.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you, <strong>${name}</strong>! Your message has been prepared. I will connect with you shortly!`;
                 
-                // Reset form
+                showToast(`Thanks ${name}, message recorded!`);
                 contactForm.reset();
                 formSubmitBtn.disabled = false;
                 formSubmitBtn.innerHTML = `<span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>`;
 
-                // Clear message after 6s
                 setTimeout(() => {
                     formStatus.innerHTML = '';
                     formStatus.className = 'form-status';
                 }, 6000);
-            }, 1200);
+            }, 1000);
         });
     }
 });

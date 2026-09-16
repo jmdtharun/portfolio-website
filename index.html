@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tharun J M D's Portfolio | Data Analytics</title>
-    <meta name="description" content="Personal portfolio of J M D Tharun - AI & Data Science Undergraduate & Data Analytics Enthusiast skilled in Power BI, Python, and SQL.">
-    <meta name="keywords" content="J M D Tharun, Data Analytics, Artificial Intelligence, Power BI, Python, SQL, Portfolio, Data Science">
+    <title>J M D Tharun | AI & Data Science | Data Analytics Portfolio</title>
+    <meta name="description" content="Personal portfolio of J M D Tharun - AI & Data Science Undergraduate & Data Analytics Enthusiast skilled in Power BI, Python, SQL, and Machine Learning.">
+    <meta name="keywords" content="J M D Tharun, Data Analytics, Artificial Intelligence, Power BI, Python, SQL, Data Science Portfolio, Krishnagiri">
     <meta name="author" content="J M D Tharun">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     
@@ -21,10 +21,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Reading Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <!-- Background Ambient Glow & Grid -->
     <div class="bg-ambient">
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
         <div class="bg-grid"></div>
     </div>
 
@@ -32,7 +38,7 @@
     <header class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="nav-brand">
-                <span class="brand-code">&lt;</span><span class="brand-text">Tharun&nbsp;J&nbsp;M&nbsp;D's</span>&nbsp;<span class="brand-accent">Portfolio</span><span class="brand-code">&gt;</span>
+                <span class="brand-code">&lt;</span><span class="brand-text">Tharun&nbsp;J&nbsp;M&nbsp;D</span><span class="brand-accent">.analytics</span><span class="brand-code">&gt;</span>
             </a>
 
             <nav class="nav-menu" id="nav-menu">
@@ -67,21 +73,28 @@
         <!-- Hero Section -->
         <section class="hero-section" id="hero">
             <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="pulse-dot"></span> Innovating with Data | Building the Future
+                <div class="hero-content reveal-left">
+                    <div class="hero-status-pill">
+                        <span class="pulse-dot"></span> Available for Internships &amp; Entry-Level Roles
                     </div>
+                    
                     <h1 class="hero-title">
                         Hi, I'm <span class="text-gradient">J M D Tharun</span>
                     </h1>
+                    
                     <h2 class="hero-subtitle">
-                        AI & Data Science Undergraduate <span class="divider">|</span> <span class="highlight">Data Analytics Enthusiast</span>
+                        AI &amp; Data Science Undergraduate <span class="divider">|</span> <span class="highlight">Data Analytics Specialist</span>
                     </h2>
 
+                    <p class="hero-bio">
+                        Transforming complex raw datasets into intuitive executive dashboards and actionable business intelligence. Skilled in <strong>Power BI</strong>, <strong>Python</strong>, and <strong>SQL</strong> with an engineering focus on scalable analytics.
+                    </p>
+
                     <div class="hero-tags">
-                        <span class="hero-tag"><i class="fa-chart-column fa-solid text-teal"></i> Power BI</span>
+                        <span class="hero-tag"><i class="fa-solid fa-chart-column text-teal"></i> Power BI</span>
                         <span class="hero-tag"><i class="fa-brands fa-python text-blue"></i> Python</span>
-                        <span class="hero-tag"><i class="fa-database fa-solid text-teal"></i> SQL</span>
+                        <span class="hero-tag"><i class="fa-solid fa-database text-teal"></i> SQL</span>
+                        <span class="hero-tag"><i class="fa-solid fa-brain text-purple"></i> Machine Learning</span>
                     </div>
 
                     <p class="hero-location">
@@ -93,11 +106,11 @@
                             <span>View Projects</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
                         <a href="resume.html" target="_blank" class="btn btn-secondary" id="download-resume-btn">
-                            <i class="fa-solid fa-file-arrow-down"></i> <span>Download Resume</span>
+                            <i class="fa-solid fa-file-arrow-down"></i> <span>View Resume</span>
                         </a>
-                        <a href="#contact" class="btn btn-outline">
-                            <i class="fa-solid fa-envelope"></i> <span>Contact Me</span>
-                        </a>
+                        <button class="btn btn-outline copy-email-btn" data-email="tharunmurugesan2000@gmail.com" aria-label="Copy Email Address">
+                            <i class="fa-regular fa-copy"></i> <span>Copy Email</span>
+                        </button>
                     </div>
 
                     <div class="hero-socials">
@@ -116,43 +129,35 @@
                     </div>
                 </div>
 
-                <div class="hero-visual">
-                    <div class="visual-card glass-card">
-                        <div class="card-header">
-                            <div class="window-dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
+                <div class="hero-visual reveal-right">
+                    <div class="hero-photo-wrapper">
+                        <div class="photo-glow-ring"></div>
+                        <div class="photo-card glass-card">
+                            <div class="photo-inner">
+                                <img src="assets/images/profile-portrait.png" alt="J M D Tharun - AI and Data Science Professional" class="profile-img" id="hero-profile-image">
+                                <div class="photo-overlay"></div>
                             </div>
-                            <span class="card-title-text"><i class="fa-solid fa-terminal"></i> tharun_analytics.py</span>
-                        </div>
-                        <div class="code-preview">
-                            <pre><code><span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd
-<span class="code-keyword">import</span> powerbi <span class="code-keyword">as</span> pbi
-
-<span class="code-comment"># Data Analytics Pipeline</span>
-student = {
-    <span class="code-string">"name"</span>: <span class="code-string">"J M D Tharun"</span>,
-    <span class="code-string">"degree"</span>: <span class="code-string">"B.Tech AI & Data Science"</span>,
-    <span class="code-string">"core_skills"</span>: [<span class="code-string">"Power BI"</span>, <span class="code-string">"SQL"</span>, <span class="code-string">"Python"</span>],
-    <span class="code-string">"certifications"</span>: <span class="code-number">8</span>,
-    <span class="code-string">"status"</span>: <span class="code-string">"Seeking Analytics Internship"</span>
-}
-
-<span class="code-builtin">print</span>(<span class="code-string">f"Transforming raw data into actionable insights!"</span>)</code></pre>
-                        </div>
-                        <div class="visual-stats-grid">
-                            <div class="v-stat">
-                                <span class="v-num">2+</span>
-                                <span class="v-label">Internships</span>
+                            <!-- Floating Glass Badges -->
+                            <div class="float-badge badge-pbi">
+                                <i class="fa-solid fa-chart-column text-teal"></i>
+                                <div>
+                                    <span class="badge-title">Power BI</span>
+                                    <span class="badge-sub">DAX &amp; Visuals</span>
+                                </div>
                             </div>
-                            <div class="v-stat">
-                                <span class="v-num">8</span>
-                                <span class="v-label">Certifications</span>
+                            <div class="float-badge badge-python">
+                                <i class="fa-brands fa-python text-blue"></i>
+                                <div>
+                                    <span class="badge-title">Python &amp; ML</span>
+                                    <span class="badge-sub">EDA &amp; Models</span>
+                                </div>
                             </div>
-                            <div class="v-stat">
-                                <span class="v-num">100%</span>
-                                <span class="v-label">Dedication</span>
+                            <div class="float-badge badge-status">
+                                <span class="status-indicator-dot"></span>
+                                <div>
+                                    <span class="badge-title">B.Tech AI &amp; DS</span>
+                                    <span class="badge-sub">VSB Engineering</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -160,7 +165,54 @@ student = {
             </div>
         </section>
 
-        <!-- About Me Section -->
+        <!-- KPI Milestone Metrics Strip -->
+        <section class="stats-strip">
+            <div class="container">
+                <div class="stats-grid glass-card reveal-up">
+                    <div class="stat-item">
+                        <div class="stat-icon-wrap"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-num-row">
+                                <span class="stat-number" data-target="8">0</span><span class="stat-plus">+</span>
+                            </div>
+                            <span class="stat-title">Certifications Earned</span>
+                        </div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-num-row">
+                                <span class="stat-number" data-target="2">0</span><span class="stat-plus">+</span>
+                            </div>
+                            <span class="stat-title">Internships Completed</span>
+                        </div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-icon-wrap"><i class="fa-solid fa-diagram-project"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-num-row">
+                                <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+                            </div>
+                            <span class="stat-title">Analytics Projects</span>
+                        </div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-num-row">
+                                <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+                            </div>
+                            <span class="stat-title">Drive &amp; Dedication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section (Bento Grid) -->
         <section class="section about-section" id="about">
             <div class="container">
                 <div class="section-header center">
@@ -169,43 +221,64 @@ student = {
                     <div class="title-underline"></div>
                 </div>
 
-                <div class="about-grid">
-                    <div class="about-card glass-card reveal-left">
+                <div class="bento-grid">
+                    <!-- Bento 1: Main Story Card -->
+                    <div class="bento-card bento-story glass-card reveal-left">
                         <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                        <h3 class="bento-title">Bridging Raw Data &amp; Actionable Strategy</h3>
                         <p class="about-text">
-                            I am an AI & Data Science undergraduate with a keen interest in data analytics. I am learning and practicing tools such as <strong>Power BI</strong>, <strong>SQL</strong>, and <strong>Python</strong> to analyze data and create basic dashboards and reports.
+                            I am an AI &amp; Data Science undergraduate at <strong>VSB Engineering College</strong> with an active passion for data analytics and intelligent systems. I specialize in turning fragmented data into clear executive dashboards and predictive models using <strong>Power BI</strong>, <strong>SQL</strong>, and <strong>Python</strong>.
                         </p>
                         <p class="about-text">
-                            I am a motivated learner who is actively building skills through online courses, certifications, and virtual internships. I enjoy working with data, understanding trends, and presenting insights in a clear and simple way.
+                            Through real-world internships at <strong>Sysent Technologies</strong> (Data Science) and <strong>C2E Software Solutions</strong> (Credit Card Fraud Detection Analytics), I have developed hands-on competencies in anomaly detection, ETL workflows, and data storytelling.
                         </p>
-                        <p class="about-text highlight-box">
-                            <i class="fa-solid fa-bullseye"></i> I am currently looking for internship or entry-level opportunities in data analytics where I can learn from industry professionals, gain practical experience, and grow my career.
-                        </p>
+                        <div class="bento-goal-badge">
+                            <i class="fa-solid fa-bullseye text-teal"></i>
+                            <span>Actively seeking Analytics Internships and entry-level opportunities to create measurable impact.</span>
+                        </div>
                     </div>
 
-                    <div class="about-cards-side reveal-right">
-                        <div class="feature-box glass-card">
-                            <div class="box-icon"><i class="fa-solid fa-brain"></i></div>
-                            <div>
-                                <h4>AI & Data Science Focus</h4>
-                                <p>B.Tech student at VSB Engineering College blending machine learning concepts with business analytics.</p>
+                    <!-- Bento 2: Workspace Visual Card -->
+                    <div class="bento-card bento-media glass-card reveal-up">
+                        <div class="media-preview-container">
+                            <img src="assets/images/about-workspace.png" alt="Data Analytics and AI Workstation" class="bento-img">
+                            <div class="media-overlay">
+                                <span class="media-tag"><i class="fa-solid fa-desktop"></i> Modern Analytics Workflow</span>
                             </div>
                         </div>
-
-                        <div class="feature-box glass-card">
-                            <div class="box-icon"><i class="fa-solid fa-chart-line"></i></div>
-                            <div>
-                                <h4>Dashboarding & Insights</h4>
-                                <p>Passionate about converting complex data tables into clear executive dashboards in Power BI & Python.</p>
-                            </div>
+                        <div class="bento-caption">
+                            <h4>Focused &amp; Analytical Mindset</h4>
+                            <p>End-to-end data pipeline capabilities from exploratory data analysis and SQL modeling to interactive BI dashboards.</p>
                         </div>
+                    </div>
 
-                        <div class="feature-box glass-card">
-                            <div class="box-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                            <div>
-                                <h4>Continuous Learning</h4>
-                                <p>Completed 8 industry certifications across IBM, Cisco, TCS, Infosys, and Udemy.</p>
-                            </div>
+                    <!-- Bento 3: Academic Background Card -->
+                    <div class="bento-card bento-education glass-card reveal-right">
+                        <div class="bento-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span class="bento-badge-mini">Degree Program</span>
+                        <h4>Bachelor of Technology (B.Tech)</h4>
+                        <p class="edu-field">Artificial Intelligence &amp; Data Science</p>
+                        <p class="edu-inst"><i class="fa-solid fa-school"></i> VSB Engineering College, Tamil Nadu</p>
+                        <span class="edu-years"><i class="fa-regular fa-calendar"></i> 2024 – 2028 (Expected)</span>
+                        <div class="bento-pills">
+                            <span class="pill-chip"><i class="fa-solid fa-check text-teal"></i> Analytics &amp; ML</span>
+                            <span class="pill-chip"><i class="fa-solid fa-check text-teal"></i> Python Foundations</span>
+                            <span class="pill-chip"><i class="fa-solid fa-check text-teal"></i> National Symposium Presenter</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento 4: Core Technical Stack Card -->
+                    <div class="bento-card bento-toolkit glass-card reveal-up">
+                        <div class="bento-card-icon"><i class="fa-solid fa-toolbox"></i></div>
+                        <span class="bento-badge-mini">Core Stack</span>
+                        <h4>Technical Competencies</h4>
+                        <div class="toolkit-grid">
+                            <div class="tool-tag"><i class="fa-solid fa-chart-column text-teal"></i> Power BI</div>
+                            <div class="tool-tag"><i class="fa-brands fa-python text-blue"></i> Python / Pandas</div>
+                            <div class="tool-tag"><i class="fa-solid fa-database text-teal"></i> SQL &amp; RDBMS</div>
+                            <div class="tool-tag"><i class="fa-solid fa-brain text-purple"></i> Machine Learning</div>
+                            <div class="tool-tag"><i class="fa-solid fa-broom text-blue"></i> Data Cleaning &amp; EDA</div>
+                            <div class="tool-tag"><i class="fa-solid fa-rotate text-teal"></i> Agile &amp; Scrum</div>
                         </div>
                     </div>
                 </div>
@@ -217,14 +290,14 @@ student = {
             <div class="container">
                 <div class="section-header center">
                     <span class="section-badge"><i class="fa-solid fa-layer-group"></i> Technical Toolkit</span>
-                    <h2 class="section-title">Skills & <span class="text-gradient">Competencies</span></h2>
+                    <h2 class="section-title">Skills &amp; <span class="text-gradient">Competencies</span></h2>
                     <div class="title-underline"></div>
                 </div>
 
                 <div class="skills-wrapper">
                     <!-- Technical Progress Bars -->
                     <div class="skills-category glass-card reveal-up">
-                        <h3 class="category-title"><i class="fa-solid fa-code"></i> Programming & Query Languages</h3>
+                        <h3 class="category-title"><i class="fa-solid fa-code"></i> Programming &amp; Query Languages</h3>
                         <div class="skill-bar-item">
                             <div class="skill-info">
                                 <span><i class="fa-brands fa-python text-teal"></i> Python (Data Cleaning, Pandas, EDA)</span>
@@ -248,7 +321,7 @@ student = {
 
                     <!-- Data Analysis & Visualization -->
                     <div class="skills-category glass-card reveal-up">
-                        <h3 class="category-title"><i class="fa-solid fa-chart-pie"></i> Data Analysis & Tools</h3>
+                        <h3 class="category-title"><i class="fa-solid fa-chart-pie"></i> Data Analysis &amp; Tools</h3>
                         <div class="skill-bar-item">
                             <div class="skill-info">
                                 <span><i class="fa-solid fa-chart-column text-teal"></i> Microsoft Power BI</span>
@@ -261,7 +334,7 @@ student = {
 
                         <div class="skill-bar-item">
                             <div class="skill-info">
-                                <span><i class="fa-solid fa-broom text-blue"></i> Data Cleaning & Preprocessing</span>
+                                <span><i class="fa-solid fa-broom text-blue"></i> Data Cleaning &amp; Preprocessing</span>
                                 <span class="skill-percentage">85%</span>
                             </div>
                             <div class="progress-line" data-progress="85%">
@@ -282,26 +355,27 @@ student = {
 
                     <!-- Concepts Pill Grid -->
                     <div class="skills-category glass-card reveal-up">
-                        <h3 class="category-title"><i class="fa-solid fa-gears"></i> Core Concepts & Platforms</h3>
+                        <h3 class="category-title"><i class="fa-solid fa-gears"></i> Core Concepts &amp; Platforms</h3>
                         <div class="pill-grid">
                             <span class="skill-pill"><i class="fa-solid fa-robot"></i> Artificial Intelligence</span>
                             <span class="skill-pill"><i class="fa-solid fa-network-wired"></i> Machine Learning</span>
-                            <span class="skill-pill"><i class="fa-solid fa-microchip"></i> IoT & Digital Transformation</span>
+                            <span class="skill-pill"><i class="fa-solid fa-microchip"></i> IoT &amp; Digital Transformation</span>
                             <span class="skill-pill"><i class="fa-solid fa-rotate"></i> Agile Scrum Fundamentals</span>
                             <span class="skill-pill"><i class="fa-solid fa-laptop-code"></i> IntelliJ IDEA</span>
+                            <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</span>
                         </div>
                     </div>
 
                     <!-- Professional Skills Pill Grid -->
                     <div class="skills-category glass-card reveal-up">
-                        <h3 class="category-title"><i class="fa-solid fa-user-check"></i> Professional & Soft Skills</h3>
+                        <h3 class="category-title"><i class="fa-solid fa-user-check"></i> Professional &amp; Soft Skills</h3>
                         <div class="pill-grid">
                             <span class="skill-pill soft"><i class="fa-solid fa-comments"></i> Communication</span>
                             <span class="skill-pill soft"><i class="fa-solid fa-display"></i> Presentation Skills</span>
                             <span class="skill-pill soft"><i class="fa-solid fa-handshake"></i> Business Etiquette</span>
                             <span class="skill-pill soft"><i class="fa-solid fa-puzzle-piece"></i> Problem-Solving</span>
-                            <span class="skill-pill soft"><i class="fa-solid fa-file-lines"></i> Resume Writing</span>
-                            <span class="skill-pill soft"><i class="fa-solid fa-users"></i> Group Discussion & Interview Skills</span>
+                            <span class="skill-pill soft"><i class="fa-solid fa-file-lines"></i> Analytical Reporting</span>
+                            <span class="skill-pill soft"><i class="fa-solid fa-users"></i> Collaboration &amp; Teamwork</span>
                         </div>
                     </div>
                 </div>
@@ -333,12 +407,13 @@ student = {
                             </div>
                             <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tiruchirappalli, Tamil Nadu</p>
                             <ul class="timeline-list">
-                                <li>Completed a one-month internship in the Data Science domain, contributing to assigned tasks and projects.</li>
-                                <li>Maintained a professional and consistent work standard, recognized by the HR department upon completion.</li>
+                                <li>Completed a dedicated one-month internship in the Data Science domain, executing end-to-end data preparation and analysis tasks.</li>
+                                <li>Demonstrated high standards of analytical precision and consistency, officially recognized by HR upon program completion.</li>
                             </ul>
                             <div class="timeline-tags">
                                 <span class="tag">Data Science</span>
                                 <span class="tag">Python</span>
+                                <span class="tag">Data Wrangling</span>
                                 <span class="tag">Analytics</span>
                             </div>
                         </div>
@@ -360,8 +435,8 @@ student = {
                             </div>
                             <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Chennai, Tamil Nadu</p>
                             <ul class="timeline-list">
-                                <li>Completed a hands-on internship analyzing transaction data to identify patterns indicative of credit card fraud.</li>
-                                <li>Applied data analytics techniques to detect anomalies and support fraud-detection workflows.</li>
+                                <li>Analyzed large-scale financial transaction datasets to identify patterns and signals indicative of fraudulent card usage.</li>
+                                <li>Applied statistical anomaly detection techniques and data visualization to streamline fraud detection investigations.</li>
                             </ul>
                             <div class="timeline-tags">
                                 <span class="tag">Credit Card Fraud</span>
@@ -382,22 +457,41 @@ student = {
                     <span class="section-badge"><i class="fa-solid fa-folder-open"></i> Portfolio Work</span>
                     <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
                     <div class="title-underline"></div>
+                    <p class="section-subtitle">Real-world applications combining data analysis, machine learning algorithms, and interactive business intelligence.</p>
+                </div>
+
+                <!-- Interactive Filter Tabs -->
+                <div class="project-filters reveal-up">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fa-solid fa-layer-group"></i> All Projects
+                    </button>
+                    <button class="filter-btn" data-filter="analytics">
+                        <i class="fa-solid fa-chart-pie"></i> Data Analytics
+                    </button>
+                    <button class="filter-btn" data-filter="ml">
+                        <i class="fa-solid fa-brain"></i> Machine Learning
+                    </button>
+                    <button class="filter-btn" data-filter="powerbi">
+                        <i class="fa-solid fa-chart-column"></i> Power BI
+                    </button>
                 </div>
 
                 <div class="projects-grid">
-                    <!-- Project 1 (Live Demo) -->
-                    <div class="project-card glass-card featured reveal-up">
+                    <!-- Project 1 (Live Demo - Spam Email Detector) -->
+                    <div class="project-card glass-card featured reveal-up" data-category="ml analytics">
                         <div class="project-banner">
+                            <img src="assets/images/project-spam-detector.png" alt="Spam Email Detection System Mockup" class="project-img">
                             <div class="project-overlay"></div>
-                            <span class="featured-badge"><i class="fa-solid fa-star"></i> Live Project</span>
-                            <div class="project-icon-wrapper">
-                                <i class="fa-solid fa-envelope-circle-check"></i>
-                            </div>
+                            <span class="featured-badge"><i class="fa-solid fa-circle-play"></i> Live Deployed</span>
                         </div>
                         <div class="project-body">
+                            <div class="project-meta-row">
+                                <span class="project-category-tag"><i class="fa-solid fa-brain"></i> Machine Learning &amp; NLP</span>
+                                <span class="project-status live"><i class="fa-solid fa-wifi"></i> Online Demo</span>
+                            </div>
                             <h3 class="project-title">Spam Email Detection System</h3>
                             <p class="project-desc">
-                                Built and deployed a machine learning-based system to classify emails as spam or legitimate. Uses NLP vectorization and classification models for automated email filtering.
+                                End-to-end intelligent spam classification web application deployed live on Render. Leverages TF-IDF natural language processing and machine learning classification to accurately identify spam vs. legitimate emails.
                             </p>
                             <div class="project-tech">
                                 <span>Python</span>
@@ -417,50 +511,68 @@ student = {
                         </div>
                     </div>
 
-                    <!-- Project 2 (Placeholder) -->
-                    <div class="project-card glass-card reveal-up">
-                        <div class="project-banner placeholder-banner-1">
-                            <div class="project-icon-wrapper">
-                                <i class="fa-solid fa-credit-card"></i>
-                            </div>
+                    <!-- Project 2 (Credit Card Fraud Analytics Dashboard) -->
+                    <div class="project-card glass-card reveal-up" data-category="analytics ml">
+                        <div class="project-banner">
+                            <img src="assets/images/project-fraud-analytics.png" alt="Credit Card Fraud Analytics Dashboard Mockup" class="project-img">
+                            <div class="project-overlay"></div>
+                            <span class="project-type-badge"><i class="fa-solid fa-shield-halved"></i> Anomaly Detection</span>
                         </div>
                         <div class="project-body">
+                            <div class="project-meta-row">
+                                <span class="project-category-tag"><i class="fa-solid fa-chart-line"></i> Financial Analytics</span>
+                                <span class="project-status active"><i class="fa-solid fa-check"></i> Featured</span>
+                            </div>
                             <h3 class="project-title">Credit Card Fraud Analytics Dashboard</h3>
                             <p class="project-desc">
-                                Interactive dashboard and exploratory data analysis focusing on transaction pattern detection, anomaly scoring, and merchant risk visualization.
+                                Interactive financial transaction analytics detecting fraudulent patterns and scoring transaction anomalies. Visualizes geospatial risk clusters, high-risk merchant categories, and anomaly detection feeds.
                             </p>
                             <div class="project-tech">
                                 <span>Power BI</span>
                                 <span>SQL</span>
                                 <span>Python</span>
-                                <span>Data Cleaning</span>
+                                <span>Anomaly Detection</span>
                             </div>
                             <div class="project-actions">
-                                <span class="status-pill"><i class="fa-solid fa-code-branch"></i> Upcoming Project</span>
+                                <a href="#contact" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-magnifying-glass-chart"></i> View Case Study
+                                </a>
+                                <a href="https://github.com/jmdtharun" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 3 (Placeholder) -->
-                    <div class="project-card glass-card reveal-up">
-                        <div class="project-banner placeholder-banner-2">
-                            <div class="project-icon-wrapper">
-                                <i class="fa-solid fa-chart-pie"></i>
-                            </div>
+                    <!-- Project 3 (Power BI Sales Performance & Trends Report) -->
+                    <div class="project-card glass-card reveal-up" data-category="analytics powerbi">
+                        <div class="project-banner">
+                            <img src="assets/images/project-sales-bi.png" alt="Power BI Executive Sales Performance Report" class="project-img">
+                            <div class="project-overlay"></div>
+                            <span class="project-type-badge"><i class="fa-solid fa-chart-column"></i> Business Intelligence</span>
                         </div>
                         <div class="project-body">
-                            <h3 class="project-title">Sales Performance & Trends Report</h3>
+                            <div class="project-meta-row">
+                                <span class="project-category-tag"><i class="fa-solid fa-chart-pie"></i> Executive BI</span>
+                                <span class="project-status active"><i class="fa-solid fa-check"></i> Power BI</span>
+                            </div>
+                            <h3 class="project-title">Sales Performance &amp; Trends BI Report</h3>
                             <p class="project-desc">
-                                Comprehensive business intelligence dashboard converting raw sales tables into interactive revenue performance reports and growth insights.
+                                Comprehensive executive business intelligence report transforming multi-year sales data into interactive revenue growth trajectories, regional market heat maps, and margin scorecard tiles.
                             </p>
                             <div class="project-tech">
                                 <span>Power BI</span>
-                                <span>Excel</span>
                                 <span>DAX</span>
-                                <span>EDA</span>
+                                <span>Excel</span>
+                                <span>Data Modeling</span>
                             </div>
                             <div class="project-actions">
-                                <span class="status-pill"><i class="fa-solid fa-folder-plus"></i> Upcoming Project</span>
+                                <a href="#contact" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-chart-pie"></i> View Report
+                                </a>
+                                <a href="https://github.com/jmdtharun" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -483,7 +595,7 @@ student = {
                         <div class="edu-header">
                             <div>
                                 <h3 class="edu-degree">Bachelor of Technology (B.Tech)</h3>
-                                <h4 class="edu-field">Artificial Intelligence & Data Science</h4>
+                                <h4 class="edu-field">Artificial Intelligence &amp; Data Science</h4>
                                 <p class="edu-college"><i class="fa-solid fa-school"></i> VSB Engineering College, India</p>
                             </div>
                             <div class="edu-badge">
@@ -491,8 +603,8 @@ student = {
                             </div>
                         </div>
                         <div class="edu-highlights">
-                            <span class="edu-tag"><i class="fa-solid fa-check text-teal"></i> Focus on Data Analytics, Machine Learning, & Intelligent Systems</span>
-                            <span class="edu-tag"><i class="fa-solid fa-check text-teal"></i> Active in Technical Symposia & Virtual Skilling Workshops</span>
+                            <span class="edu-tag"><i class="fa-solid fa-check text-teal"></i> Rigorous curriculum in Machine Learning, Statistical Inference, and Analytics</span>
+                            <span class="edu-tag"><i class="fa-solid fa-check text-teal"></i> Active presenter in technical symposia and national coding challenges</span>
                         </div>
                     </div>
                 </div>
@@ -504,7 +616,7 @@ student = {
             <div class="container">
                 <div class="section-header center">
                     <span class="section-badge"><i class="fa-solid fa-certificate"></i> Verified Qualifications</span>
-                    <h2 class="section-title">Certifications & <span class="text-gradient">Badges</span></h2>
+                    <h2 class="section-title">Certifications &amp; <span class="text-gradient">Badges</span></h2>
                     <div class="title-underline"></div>
                 </div>
 
@@ -516,7 +628,7 @@ student = {
                             <span class="cert-date">Nov 2025</span>
                         </div>
                         <h4 class="cert-name">AI Fundamentals</h4>
-                        <p class="cert-org"><i class="fa-solid fa-award"></i> IBM SkillsBuild, Cisco Networking Academy</p>
+                        <p class="cert-org"><i class="fa-solid fa-award"></i> IBM SkillsBuild &amp; Cisco Networking Academy</p>
                         <div class="cert-footer">
                             <a href="https://www.credly.com/badges/04f5d34d-4fc9-4571-9281-5b1a221d6523/public_url" target="_blank" rel="noopener" class="verified-tag">
                                 <i class="fa-solid fa-award"></i> View Credly Badge <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
@@ -531,7 +643,7 @@ student = {
                             <span class="cert-date">Nov 2025</span>
                         </div>
                         <h4 class="cert-name">Introduction to IoT and Digital Transformation</h4>
-                        <p class="cert-org"><i class="fa-solid fa-award"></i> EdCreate Foundation, Cisco Networking Academy</p>
+                        <p class="cert-org"><i class="fa-solid fa-award"></i> EdCreate Foundation &amp; Cisco Networking Academy</p>
                         <div class="cert-footer">
                             <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> Verified</span>
                         </div>
@@ -585,7 +697,7 @@ student = {
                             <span class="cert-date">Jan 2026</span>
                         </div>
                         <h4 class="cert-name">SQL and Relational Databases 101</h4>
-                        <p class="cert-org"><i class="fa-solid fa-award"></i> IBM Developer Skills Network, Cognitive Class</p>
+                        <p class="cert-org"><i class="fa-solid fa-award"></i> IBM Developer Skills Network &amp; Cognitive Class</p>
                         <div class="cert-footer">
                             <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> Verified</span>
                         </div>
@@ -612,7 +724,7 @@ student = {
                             <div class="cert-issuer-icon udemy"><i class="fa-solid fa-rotate"></i></div>
                             <span class="cert-date">Dec 2025</span>
                         </div>
-                        <h4 class="cert-name">The Complete Agile Scrum Fundamentals Course + Certification</h4>
+                        <h4 class="cert-name">The Complete Agile Scrum Fundamentals Course</h4>
                         <p class="cert-org"><i class="fa-solid fa-award"></i> Udemy</p>
                         <div class="cert-footer">
                             <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> Verified</span>
@@ -626,8 +738,8 @@ student = {
         <section class="section achievements-section" id="achievements">
             <div class="container">
                 <div class="section-header center">
-                    <span class="section-badge"><i class="fa-solid fa-star"></i> Honors & Recognition</span>
-                    <h2 class="section-title">Achievements & <span class="text-gradient">Activities</span></h2>
+                    <span class="section-badge"><i class="fa-solid fa-star"></i> Honors &amp; Recognition</span>
+                    <h2 class="section-title">Achievements &amp; <span class="text-gradient">Activities</span></h2>
                     <div class="title-underline"></div>
                 </div>
 
@@ -640,7 +752,7 @@ student = {
                         </div>
                         <h3 class="achieve-title">Paper Presentation: "Sustainable Development"</h3>
                         <p class="achieve-desc">
-                            Presented a paper on <strong>"Sustainable Development"</strong> at ELECTRA'25, a National Level Technical Symposium organized by the Department of Electrical and Electronics Engineering, Anna University Regional Campus, Madurai.
+                            Presented an academic paper on <strong>"Sustainable Development"</strong> at ELECTRA'25, a National Level Technical Symposium organized by the Department of Electrical and Electronics Engineering, Anna University Regional Campus, Madurai.
                         </p>
                     </div>
                 </div>
@@ -659,21 +771,29 @@ student = {
                 <div class="contact-grid">
                     <div class="contact-info-wrapper reveal-left">
                         <div class="contact-info-card glass-card">
-                            <h3>Reach Out Directly</h3>
-                            <p>I am looking for internship or entry-level opportunities in data analytics. Feel free to send a message or connect via LinkedIn!</p>
+                            <h3>Let's Connect</h3>
+                            <p>I am actively seeking internship or entry-level opportunities in data analytics and business intelligence. Feel free to connect via email, phone, or LinkedIn!</p>
                             
+                            <div class="response-time-pill">
+                                <i class="fa-regular fa-clock text-teal"></i>
+                                <span>Typically responds within 24 hours</span>
+                            </div>
+
                             <div class="info-list">
-                                <a href="mailto:tharunmurugesan2000@gmail.com" class="info-item">
+                                <div class="info-item email-item">
                                     <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-                                    <div>
+                                    <div class="info-text-wrap">
                                         <span class="info-label">Email</span>
-                                        <span class="info-val">tharunmurugesan2000@gmail.com</span>
+                                        <a href="mailto:tharunmurugesan2000@gmail.com" class="info-val">tharunmurugesan2000@gmail.com</a>
                                     </div>
-                                </a>
+                                    <button class="quick-copy-btn copy-email-btn" data-email="tharunmurugesan2000@gmail.com" title="Copy Email">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
 
                                 <a href="tel:+919042433487" class="info-item">
                                     <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                                    <div>
+                                    <div class="info-text-wrap">
                                         <span class="info-label">Phone</span>
                                         <span class="info-val">+91 90424 33487</span>
                                     </div>
@@ -681,15 +801,16 @@ student = {
 
                                 <a href="https://linkedin.com/in/j-m-d-tharun-b2622236b" target="_blank" rel="noopener" class="info-item">
                                     <div class="info-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-                                    <div>
+                                    <div class="info-text-wrap">
                                         <span class="info-label">LinkedIn</span>
-                                        <span class="info-val">linkedin.com/in/j-m-d-tharun-b2622236b</span>
+                                        <span class="info-val">linkedin.com/in/j-m-d-tharun</span>
                                     </div>
+                                    <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
                                 </a>
 
                                 <div class="info-item">
                                     <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                                    <div>
+                                    <div class="info-text-wrap">
                                         <span class="info-label">Location</span>
                                         <span class="info-val">Krishnagiri, Tamil Nadu, India</span>
                                     </div>
@@ -704,7 +825,7 @@ student = {
                             
                             <div class="form-group">
                                 <label for="form-name"><i class="fa-solid fa-user"></i> Name</label>
-                                <input type="text" id="form-name" required placeholder="Your Name">
+                                <input type="text" id="form-name" required placeholder="Your Name or Company">
                             </div>
 
                             <div class="form-group">
@@ -714,7 +835,7 @@ student = {
 
                             <div class="form-group">
                                 <label for="form-message"><i class="fa-solid fa-message"></i> Message</label>
-                                <textarea id="form-message" rows="5" required placeholder="Hello Tharun, I would like to discuss an analytics opportunity..."></textarea>
+                                <textarea id="form-message" rows="5" required placeholder="Hello Tharun, I would like to discuss a data analytics opportunity..."></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
@@ -734,13 +855,13 @@ student = {
         <div class="container footer-container">
             <div class="footer-left">
                 <a href="#hero" class="nav-brand">
-                    <span class="brand-code">&lt;</span><span class="brand-text">Tharun&nbsp;J&nbsp;M&nbsp;D's</span>&nbsp;<span class="brand-accent">Portfolio</span><span class="brand-code">&gt;</span>
+                    <span class="brand-code">&lt;</span><span class="brand-text">Tharun&nbsp;J&nbsp;M&nbsp;D</span><span class="brand-accent">.analytics</span><span class="brand-code">&gt;</span>
                 </a>
-                <p>AI & Data Science Undergraduate | Data Analytics</p>
+                <p>AI &amp; Data Science Undergraduate | Data Analytics Specialist</p>
             </div>
             
             <div class="footer-center">
-                <p>&copy; 2026 J M D Tharun. All rights reserved.</p>
+                <p>&copy; 2026 J M D Tharun. Built with passion for data &amp; clean design.</p>
             </div>
 
             <div class="footer-right">
@@ -756,6 +877,12 @@ student = {
             </div>
         </div>
     </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span class="toast-message" id="toast-message">Copied to clipboard!</span>
+    </div>
 
     <!-- Custom JS -->
     <script src="script.js"></script>

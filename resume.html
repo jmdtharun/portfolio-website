@@ -76,9 +76,28 @@
         }
 
         .resume-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
             border-bottom: 2px solid var(--primary);
             padding-bottom: 1.2rem;
             margin-bottom: 1.5rem;
+        }
+
+        .resume-header-text {
+            flex-grow: 1;
+        }
+
+        .resume-avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 15%;
+            border: 2px solid var(--accent);
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.2);
+            flex-shrink: 0;
         }
 
         .name {
@@ -290,15 +309,18 @@
         </div>
 
         <header class="resume-header">
-            <h1 class="name">J M D Tharun</h1>
-            <div class="title">AI & Data Science Undergraduate | Data Analytics Enthusiast</div>
-            <div class="contact-info">
-                <span><i class="fa-solid fa-location-dot"></i> Krishnagiri, Tamil Nadu, India</span>
-                <span><i class="fa-solid fa-envelope"></i> <a href="mailto:tharunmurugesan2000@gmail.com">tharunmurugesan2000@gmail.com</a></span>
-                <span><i class="fa-solid fa-phone"></i> +91 90424 33487</span>
-                <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/j-m-d-tharun-b2622236b" target="_blank">linkedin.com/in/j-m-d-tharun-b2622236b</a></span>
-                <span><i class="fa-brands fa-github"></i> <a href="https://github.com/jmdtharun" target="_blank">github.com/jmdtharun</a></span>
+            <div class="resume-header-text">
+                <h1 class="name">J M D Tharun</h1>
+                <div class="title">AI & Data Science Undergraduate | Data Analytics Specialist</div>
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-location-dot"></i> Krishnagiri, Tamil Nadu, India</span>
+                    <span><i class="fa-solid fa-envelope"></i> <a href="mailto:tharunmurugesan2000@gmail.com">tharunmurugesan2000@gmail.com</a></span>
+                    <span><i class="fa-solid fa-phone"></i> +91 90424 33487</span>
+                    <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/j-m-d-tharun-b2622236b" target="_blank">linkedin.com/in/j-m-d-tharun-b2622236b</a></span>
+                    <span><i class="fa-brands fa-github"></i> <a href="https://github.com/jmdtharun" target="_blank">github.com/jmdtharun</a></span>
+                </div>
             </div>
+            <img src="assets/images/profile-portrait.png" alt="J M D Tharun - AI & Data Science" class="resume-avatar">
         </header>
 
         <section class="section">
