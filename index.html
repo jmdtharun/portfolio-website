@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J M D Tharun | AI & Data Science | Data Analytics Portfolio</title>
-    <meta name="description" content="Personal portfolio of J M D Tharun - AI & Data Science Undergraduate & Data Analytics Enthusiast skilled in Power BI, Python, SQL, and Machine Learning.">
+    <title>J M D Tharun | AI &amp; Data Science | Data Analytics Portfolio</title>
+    <meta name="description" content="Personal portfolio of J M D Tharun - AI &amp; Data Science Undergraduate &amp; Data Analytics Enthusiast skilled in Power BI, Python, SQL, and Machine Learning.">
     <meta name="keywords" content="J M D Tharun, Data Analytics, Artificial Intelligence, Power BI, Python, SQL, Data Science Portfolio, Krishnagiri">
     <meta name="author" content="J M D Tharun">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Outfit (Headings & Badges) + Plus Jakarta Sans (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -26,8 +26,9 @@
         <div class="scroll-progress-bar" id="scroll-progress"></div>
     </div>
 
-    <!-- Background Ambient Glow & Grid -->
+    <!-- Background Ambient Glow, Contour Waves & Grid -->
     <div class="bg-ambient">
+        <div class="contour-waves-bg"></div>
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
         <div class="glow-orb orb-3"></div>
@@ -50,7 +51,7 @@
                     <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
                     <li><a href="#certifications" class="nav-link"><i class="fa-solid fa-certificate"></i> Certifications</a></li>
                     <li><a href="#achievements" class="nav-link"><i class="fa-solid fa-trophy"></i> Achievements</a></li>
-                    <li><a href="#contact" class="nav-link nav-btn"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+                    <li><a href="#contact" class="nav-cta-btn"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
                 </ul>
             </nav>
 
@@ -70,16 +71,22 @@
     <div class="nav-overlay" id="nav-overlay"></div>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section (Behance Inspired Layout with Original Content) -->
         <section class="hero-section" id="hero">
             <div class="container hero-container">
                 <div class="hero-content reveal-left">
-                    <div class="hero-status-pill">
-                        <span class="pulse-dot"></span> Available for Internships &amp; Entry-Level Roles
+                    <!-- Figma Selection Box Badge around Status -->
+                    <div class="selection-box-badge">
+                        <span class="corner tl"></span>
+                        <span class="corner tr"></span>
+                        <span class="corner bl"></span>
+                        <span class="corner br"></span>
+                        <span class="pulse-dot"></span>
+                        <span class="badge-text">Available for Internships &amp; Entry-Level Roles</span>
                     </div>
                     
                     <h1 class="hero-title">
-                        Hi, I'm <span class="text-gradient">J M D Tharun</span>
+                        Hi, I’m <span class="name-underline">J M D Tharun</span>
                     </h1>
                     
                     <h2 class="hero-subtitle">
@@ -102,13 +109,13 @@
                     </p>
 
                     <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">
+                        <a href="#projects" class="btn btn-pill-primary">
                             <span>View Projects</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="resume.html" target="_blank" class="btn btn-secondary" id="download-resume-btn">
+                        <a href="resume.html" target="_blank" class="btn btn-pill-secondary" id="download-resume-btn">
                             <i class="fa-solid fa-file-arrow-down"></i> <span>View Resume</span>
                         </a>
-                        <button class="btn btn-outline copy-email-btn" data-email="tharunmurugesan2000@gmail.com" aria-label="Copy Email Address">
+                        <button class="btn btn-pill-ghost copy-email-btn" data-email="tharunmurugesan2000@gmail.com" aria-label="Copy Email Address">
                             <i class="fa-regular fa-copy"></i> <span>Copy Email</span>
                         </button>
                     </div>
@@ -130,36 +137,73 @@
                 </div>
 
                 <div class="hero-visual reveal-right">
-                    <div class="hero-photo-wrapper">
-                        <div class="photo-glow-ring"></div>
-                        <div class="photo-card glass-card">
-                            <div class="photo-inner">
-                                <img src="assets/images/profile-portrait.png" alt="J M D Tharun - AI and Data Science Professional" class="profile-img" id="hero-profile-image">
-                                <div class="photo-overlay"></div>
+                    <div class="hero-stage">
+                        <!-- Distinctive Curved Royal Blue Blob Backdrop -->
+                        <div class="hero-blue-blob"></div>
+                        
+                        <!-- Topographic vector contour loops -->
+                        <svg class="hero-contour-svg" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 60,260 C 80,130 220,70 350,90 C 470,110 490,250 450,370 C 410,480 250,490 130,440 C 50,400 40,340 60,260 Z" stroke="#ff6b00" stroke-width="1.8" stroke-dasharray="6 6" opacity="0.35"/>
+                            <path d="M 90,280 C 110,160 240,110 350,125 C 450,140 460,260 420,350 C 380,440 240,450 150,410 C 80,380 70,340 90,280 Z" stroke="#ff6b00" stroke-width="1.2" opacity="0.2"/>
+                        </svg>
+
+                        <!-- Cutout Transparent Portrait -->
+                        <div class="hero-portrait-wrap">
+                            <img src="assets/images/profile-portrait-transparent.png" alt="J M D Tharun - AI and Data Science Professional" class="hero-portrait-img" id="hero-profile-image">
+                        </div>
+
+                        <!-- Floating Badge 1 (Top Left with Tail): Power BI -->
+                        <div class="hero-chip-badge chip-top">
+                            <div class="chip-bubble">
+                                <i class="fa-solid fa-chart-column"></i>
+                                <span>Power BI Expert</span>
                             </div>
-                            <!-- Floating Glass Badges -->
-                            <div class="float-badge badge-pbi">
-                                <i class="fa-solid fa-chart-column text-teal"></i>
-                                <div>
-                                    <span class="badge-title">Power BI</span>
-                                    <span class="badge-sub">DAX &amp; Visuals</span>
-                                </div>
-                            </div>
-                            <div class="float-badge badge-python">
-                                <i class="fa-brands fa-python text-blue"></i>
-                                <div>
-                                    <span class="badge-title">Python &amp; ML</span>
-                                    <span class="badge-sub">EDA &amp; Models</span>
-                                </div>
-                            </div>
-                            <div class="float-badge badge-status">
-                                <span class="status-indicator-dot"></span>
-                                <div>
-                                    <span class="badge-title">B.Tech AI &amp; DS</span>
-                                    <span class="badge-sub">VSB Engineering</span>
-                                </div>
+                            <div class="chip-pointer"></div>
+                        </div>
+
+                        <!-- Floating Badge 2 (Bottom Right): Python & ML -->
+                        <div class="hero-chip-badge chip-bottom">
+                            <div class="chip-bubble">
+                                <i class="fa-brands fa-python"></i>
+                                <span>Python &amp; ML</span>
                             </div>
                         </div>
+
+                        <!-- Decorative 3D cursor arrow and starburst -->
+                        <div class="hero-cursor-decor">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3L11 20L13.5 13.5L20 11L4 3Z" fill="#ff6b00" stroke="#ffffff" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="hero-star-decor">
+                            <i class="fa-solid fa-sparkles"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full-Width Royal Blue Marquee Ticker Ribbon (Tharun's Data Science & Analytics domains) -->
+            <div class="hero-marquee-ribbon">
+                <div class="marquee-track">
+                    <div class="marquee-group">
+                        <span class="marquee-text">Data Analytics</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Microsoft Power BI</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Python &amp; SQL</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Machine Learning</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Executive Dashboards</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Exploratory Data Analysis</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Predictive Modeling</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Business Intelligence</span><span class="marquee-star">✦</span>
+                    </div>
+                    <div class="marquee-group" aria-hidden="true">
+                        <span class="marquee-text">Data Analytics</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Microsoft Power BI</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Python &amp; SQL</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Machine Learning</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Executive Dashboards</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Exploratory Data Analysis</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Predictive Modeling</span><span class="marquee-star">✦</span>
+                        <span class="marquee-text">Business Intelligence</span><span class="marquee-star">✦</span>
                     </div>
                 </div>
             </div>

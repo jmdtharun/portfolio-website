@@ -26,11 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const htmlElement = document.documentElement;
 
     const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     if (savedTheme) {
         htmlElement.setAttribute('data-theme', savedTheme);
-    } else if (!systemPrefersDark) {
+    } else {
         htmlElement.setAttribute('data-theme', 'light');
     }
 
