@@ -287,4 +287,102 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1000);
         });
     }
+
+    // ----------------------------------------------------------------------
+    // 11. CERTIFICATE PREVIEW MODAL SYSTEM
+    // ----------------------------------------------------------------------
+    const certModal = document.getElementById('cert-modal');
+    const certModalTitle = document.getElementById('cert-modal-title');
+    const certModalIssuer = document.getElementById('cert-modal-issuer');
+    const certModalImg = document.getElementById('cert-modal-img');
+    const certModalId = document.getElementById('cert-modal-id');
+    const certModalPdfLink = document.getElementById('cert-modal-pdf');
+    const certModalClose = document.getElementById('cert-modal-close');
+    const certCopyIdBtn = document.getElementById('cert-copy-id-btn');
+
+    const openCertModal = (data) => {
+        if (!certModal) return;
+        if (certModalTitle) certModalTitle.textContent = data.title || 'Certificate of Completion';
+        if (certModalIssuer) certModalIssuer.innerHTML = `<i class="fa-solid fa-award"></i> ${data.issuer || 'Verified Credential'}`;
+        if (certModalImg) {
+            certModalImg.src = data.img || '';
+            certModalImg.alt = data.title || 'Certificate Image';
+        }
+        if (certModalId) certModalId.textContent = data.id || 'N/A';
+        if (certModalPdfLink) {
+            certModalPdfLink.href = data.pdf || '#';
+            if (data.pdf) {
+                certModalPdfLink.style.display = 'inline-flex';
+            } else {
+                certModalPdfLink.style.display = 'none';
+            }
+        }
+        certModal.classList.add('active');
+        document.body.classList.add('modal-open');
+    };
+
+    const closeCertModal = () => {
+        if (!certModal) return;
+        certModal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    };
+
+    const certButtons = document.querySelectorAll('.cert-view-btn');
+    certButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const data = {
+                title: btn.getAttribute('data-cert-title'),
+                issuer: btn.getAttribute('data-cert-issuer'),
+                id: btn.getAttribute('data-cert-id'),
+                date: btn.getAttribute('data-cert-date'),
+                img: btn.getAttribute('data-cert-img'),
+                pdf: btn.getAttribute('data-cert-pdf')
+            };
+            openCertModal(data);
+        });
+    });
+
+    if (certModalClose) {
+        certModalClose.addEventListener('click', closeCertModal);
+    }
+
+    if (certModal) {
+        certModal.addEventListener('click', (e) => {
+            if (e.target === certModal) {
+                closeCertModal();
+            }
+        });
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && certModal && certModal.classList.contains('active')) {
+            closeCertModal();
+        }
+    });
+
+    if (certCopyIdBtn && certModalId) {
+        certCopyIdBtn.addEventListener('click', async () => {
+            const idText = certModalId.textContent.trim();
+            if (!idText || idText === 'N/A') return;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(idText);
+                } else {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = idText;
+                    textArea.style.position = 'fixed';
+                    textArea.style.left = '-999999px';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    textArea.remove();
+                }
+                showToast(`Credential ID copied: ${idText}`);
+            } catch (err) {
+                showToast(`ID: ${idText}`);
+            }
+        });
+    }
 });
